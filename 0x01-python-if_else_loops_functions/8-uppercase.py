@@ -8,4 +8,3 @@ def uppercase(str):
         else:
             uppercase_str += c
     return (print('{}'.format(uppercase_str)))
-
