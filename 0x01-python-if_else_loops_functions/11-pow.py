@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 def pow(a, b):
-    result = 1
-
+    power_res = 1
     if b >= 0:
         for _ in range(b):
-            result *= a
+            power_res *= a
     else:
         for _ in range(abs(b)):
-            result /= a
-
-    return result
+            power_res /= a
+    return round(power_res, 20)
