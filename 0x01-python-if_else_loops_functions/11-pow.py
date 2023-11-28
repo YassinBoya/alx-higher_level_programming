@@ -6,4 +6,4 @@ def pow(a, b):
         b = abs(b)
     for _ in range(b):
         power_res = power_res * a
-    return (power_res)
+    return round(power_res, 15)
