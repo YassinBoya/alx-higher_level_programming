@@ -4,6 +4,6 @@ def pow(a, b):
     if b < 0:
         a = 1 / a
         b = abs(b)
-    for i in range(b):
+    for _ in range(b):
         power_res = power_res * a
     return (power_res)
