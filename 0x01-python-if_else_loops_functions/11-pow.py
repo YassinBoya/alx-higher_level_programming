@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def pow(a, b):
+    if b == 0:
+        return 1
     power_res = 1
     if b < 0:
         a = 1 / a
