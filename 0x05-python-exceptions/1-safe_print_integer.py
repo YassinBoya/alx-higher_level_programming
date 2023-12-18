@@ -9,4 +9,3 @@ def safe_print_integer(value):
             return (False)
     except TypeError as ex:
         print("{}".format(ex))
-        
