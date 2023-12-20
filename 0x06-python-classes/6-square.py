@@ -50,8 +50,7 @@ class Square:
                 or not all(isinstance(num, int) for num in value)
                 or all(num < 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+        self.__position = value
 
     def my_print(self):
         if self.__size == 0:
