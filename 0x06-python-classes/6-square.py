@@ -53,7 +53,8 @@ class Square:
 
     @property
     def position(self):
-        """get the square position"""
+        """Returns the position of the square
+        """
         return (self.__position)
 
     @position.setter
