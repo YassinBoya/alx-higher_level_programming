@@ -6,7 +6,7 @@ class Rectangle:
     """Represention of the instance object"""
 
     def __init__(self, width=0, height=0):
-        """
+        """Initialize a new Rectangle.
         Args:
 
         width : the width of the new rectangle
