@@ -68,8 +68,8 @@ class Rectangle:
 
         if self.width == 0 or self.height == 0:
             return ""
-        for i in range(self.height):
-            for j in range(self.width):
+        for i in range(self.__height):
+            for j in range(self.__width):
                 stringDisplaySign += str(self.print_symbol)
             if i < self.height - 1:
                 stringDisplaySign += "\n"
@@ -78,7 +78,7 @@ class Rectangle:
     def __repr__(self):
         """return a string representation of the rectangle"""
 
-        return f"Rectangle({self.width}, {self.height})"
+        return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
         """
