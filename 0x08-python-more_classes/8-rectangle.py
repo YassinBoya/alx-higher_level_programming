@@ -53,32 +53,32 @@ class Rectangle:
     def area(self):
         """Return the area of a rectangle"""
 
-        return self.width * self.height
+        return self.__width * self.__height
 
     def perimeter(self):
         """Return the perimetre of a rectangle"""
 
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
-        return 2 * (self.width + self.height)
+        return 2 * (self.__width + self.__height)
 
     def __str__(self):
         stringDisplaySign = ""
         """Print the # sign depends on the width and height"""
 
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return ""
-        for i in range(self.height):
-            for j in range(self.width):
+        for i in range(self.__height):
+            for j in range(self.__width):
                 stringDisplaySign += str(self.print_symbol)
-            if i < self.height - 1:
+            if i < self.__height - 1:
                 stringDisplaySign += "\n"
         return stringDisplaySign
 
     def __repr__(self):
         """return a string representation of the rectangle"""
 
-        return f"Rectangle({self.width}, {self.height})"
+        return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
         """
