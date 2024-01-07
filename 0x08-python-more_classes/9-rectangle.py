@@ -50,13 +50,17 @@ class Rectangle:
         return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return rectangle with the character #"""
-        if self.__width == 0 or self.__height == 0:
+        stringDisplaySign = ""
+        """Print the # sign depends on the width and height"""
+
+        if self.width == 0 or self.height == 0:
             return ""
-        rectangle_str = []
-        for i in range(self.__height):
-            rectangle_str.append(str(self.print_symbol) * self.__width)
-        return "\n".join(rectangle_str)
+        for i in range(self.height):
+            for j in range(self.width):
+                stringDisplaySign += str(self.print_symbol)
+            if i < self.height - 1:
+                stringDisplaySign += "\n"
+        return stringDisplaySign
 
     def __repr__(self):
         """return a string representation of the rectangle"""
