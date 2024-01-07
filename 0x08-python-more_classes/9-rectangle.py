@@ -50,10 +50,6 @@ class Rectangle:
         else:
             self.__height = value
 
-    @classmethod
-    def square(cls, size=0):
-        return cls(size, size)
-
     def area(self):
         """Return the area of a rectangle"""
 
@@ -89,7 +85,7 @@ class Rectangle:
         Print the message Bye rectangle...
         when an instance of Rectangle is deleted
         """
-        print(f"Bye rectangle...")
+        print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
     @staticmethod
@@ -102,3 +98,7 @@ class Rectangle:
             return rect_1
         else:
             return rect_2
+
+    @classmethod
+    def square(cls, size=0):
+        return cls(size, size)
