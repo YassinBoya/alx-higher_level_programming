@@ -50,6 +50,15 @@ class Rectangle:
         else:
             self.__height = value
 
+    @classmethod
+    def square(cls, size=0):
+        """Return a new Rectangle with width and height equal to size.
+
+        Args:
+            size (int): The width and height of the new Rectangle.
+        """
+        return (cls(size, size))
+
     def area(self):
         """Return the area of a rectangle"""
 
@@ -100,12 +109,3 @@ class Rectangle:
             return rect_2
         else:
             return rect_1
-
-    @classmethod
-    def square(cls, size=0):
-        """Return a new Rectangle with width and height equal to size.
-
-        Args:
-            size (int): The width and height of the new Rectangle.
-        """
-        return (cls(size, size))
