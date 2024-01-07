@@ -1,22 +1,29 @@
 #!/usr/bin/python3
-"""defines a class Rectangle"""
+"""Define a rectangle class"""
 
 
 class Rectangle:
-    """Class that defines a rectangle
-    attributes: width of rectangle
-              : height of rectangle
-    """
+    """Represention of the instance object"""
+
     number_of_instances = 0
     print_symbol = "#"
 
     def __init__(self, width=0, height=0):
-        self.width = width
+        """Initialize a new Rectangle.
+        Args:
+
+        width : the width of the new rectangle
+        height : the height of the new rectangle
+
+        """
         self.height = height
+        self.width = width
         Rectangle.number_of_instances += 1
 
     @property
     def width(self):
+        """Get/Set the width of the rectangle"""
+
         return self.__width
 
     @width.setter
@@ -25,10 +32,13 @@ class Rectangle:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value
+        else:
+            self.__width = value
 
     @property
     def height(self):
+        """Get/Set the height of the rectangle"""
+
         return self.__height
 
     @height.setter
@@ -37,17 +47,20 @@ class Rectangle:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
-        self.__height = value
+        else:
+            self.__height = value
 
     def area(self):
-        """method that returns the rectangle area"""
-        return self.__width * self.__height
+        """Return the area of a rectangle"""
+
+        return self.width * self.height
 
     def perimeter(self):
-        """method that returns the rectangle perimeter"""
-        if self.__width == 0 or self.__height == 0:
+        """Return the perimetre of a rectangle"""
+
+        if self.width == 0 or self.height == 0:
             return 0
-        return 2 * (self.__width + self.__height)
+        return 2 * (self.width + self.height)
 
     def __str__(self):
         stringDisplaySign = ""
@@ -64,11 +77,15 @@ class Rectangle:
 
     def __repr__(self):
         """return a string representation of the rectangle"""
-        return f"Rectangle({self.__width}, {self.__height})"
+
+        return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
-        """Print the message when an instance of Rectangle is deleted"""
-        print("Bye rectangle...")
+        """
+        Print the message Bye rectangle...
+        when an instance of Rectangle is deleted
+        """
+        print(f"Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
     @staticmethod
@@ -77,7 +94,7 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() >= rect_2.area():
+        elif Rectangle.area(rect_1) >= Rectangle.area(rect_2):
             return rect_1
         else:
             return rect_2
