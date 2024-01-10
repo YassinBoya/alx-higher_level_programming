@@ -3,6 +3,8 @@
 
 
 def write_file(filename="", text=""):
-    with open(filename, 'w') as file:
+    """write the contents of a UTF8 text into a file
+    and return the number of characters written."""
+    with open(filename, 'w', encoding="utf-8") as file:
         file.write(text)
-    return (len(text))    
+    return (len(text))
