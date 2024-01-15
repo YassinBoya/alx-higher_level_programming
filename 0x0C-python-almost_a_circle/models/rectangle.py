@@ -111,7 +111,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         for par, arg in enumerate(args):
             if arg is None:
-                    self.__init__(self.width, self.height, self.x, self.y)
+                self.__init__(self.width, self.height, self.x, self.y)
             if par == 0:
                 self.id = arg
             elif par == 1:
@@ -122,6 +122,3 @@ class Rectangle(Base):
                 self.x = arg
             elif par == 4:
                 self.y = arg
-
-
-
