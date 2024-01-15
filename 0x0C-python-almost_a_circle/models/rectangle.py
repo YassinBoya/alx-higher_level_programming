@@ -128,3 +128,4 @@ class Rectangle(Base):
                 self.x = arg
             elif par == 4:
                 self.y = arg
+            par += 1
