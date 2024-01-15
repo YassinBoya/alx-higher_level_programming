@@ -113,11 +113,13 @@ class Rectangle(Base):
 {self.width}/{self.height}")
 
     def update(self, *args):
-        for par, arg in enumerate(args):
-            if arg is None:
-                self.__init__(self.width, self.height, self.x, self.y)
-            if par == 0:
-                self.id = arg
+        par = 0
+        for arg in enumerate(args):
+            if a == 0:
+                if arg is None:
+                    self.__init__(self.width, self.height, self.x, self.y)
+                else:
+                    self.id = arg
             elif par == 1:
                 self.width = arg
             elif par == 2:
