@@ -113,17 +113,6 @@ class Rectangle(Base):
 {self.width}/{self.height}")
 
     def update(self, *args):
-        """Update the Rectangle.
-
-        Args:
-            *args (ints): New attribute values.
-                - 1st argument represents id attribute
-                - 2nd argument represents width attribute
-                - 3rd argument represent height attribute
-                - 4th argument represents x attribute
-                - 5th argument represents y attribute
-            **kwargs (dict): New key/value pairs of attributes.
-        """
         if args and len(args) != 0:
             a = 0
             for arg in args:
