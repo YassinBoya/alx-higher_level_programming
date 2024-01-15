@@ -98,18 +98,3 @@ class Rectangle(Base):
             for j in range(self.width):
                 print(f"#", end="")
             print()
-
-    def update(self, *args, **kwargs):
-        for par, arg in enumerate(args):
-            if arg is None:
-                self.__init__(self.width, self.height, self.x, self.y)
-            if par == 0:
-                self.id = arg
-            elif par == 1:
-                self.width = arg
-            elif par == 2:
-                self.height = arg
-            elif par == 3:
-                self.x = arg
-            elif par == 4:
-                self.y = arg
