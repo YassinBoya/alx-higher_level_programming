@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Defines a rectangle class."""
+"""Defines the Rectangle class"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Represent a rectangle."""
+    """Representation of Rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize a new Rectangle.
@@ -80,53 +80,43 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """Return the area of the Rectangle."""
+        """return the area of a rectangle"""
+
         return self.width * self.height
 
     def display(self):
-        """Print the Rectangle using the `#` character."""
+        """prints in stdout the Rectangle instance with the character #"""
+
         if self.width == 0 or self.height == 0:
             print("")
             return
-
-        [print("") for y in range(self.y)]
-        for h in range(self.height):
-            [print(" ", end="") for x in range(self.x)]
-            [print("#", end="") for w in range(self.width)]
+        for iy in range(self.y):
             print("")
-
-    def update(self, *args, **kwargs):
-        """Update the Rectangle.
-
-        Args:
-            *args (ints): New attribute values.
-                - 1st argument represents id attribute
-                - 2nd argument represents width attribute
-                - 3rd argument represent height attribute
-                - 4th argument represents x attribute
-                - 5th argument represents y attribute
-            **kwargs (dict): New key/value pairs of attributes.
-        """
-        if args and len(args) != 0:
-            a = 0
-            for arg in args:
-                if a == 0:
-                    if arg is None:
-                        self.__init__(self.width, self.height, self.x, self.y)
-                    else:
-                        self.id = arg
-                elif a == 1:
-                    self.width = arg
-                elif a == 2:
-                    self.height = arg
-                elif a == 3:
-                    self.x = arg
-                elif a == 4:
-                    self.y = arg
-                a += 1
+        for i in range(self.height):
+            for jx in range(self.x):
+                print(" ", end="")
+            for j in range(self.width):
+                print(f"#", end="")
+            print()
 
     def __str__(self):
-        """Return the print() and str() representation of the Rectangle."""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
-                                                       self.x, self.y,
-                                                       self.width, self.height)
+
+        """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+
+        return (f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
+{self.width}/{self.height}")
+
+    def update(self, *args, **kwargs):
+        for par, arg in enumerate(args):
+            if arg is None:
+                self.__init__(self.width, self.height, self.x, self.y)
+            if par == 0:
+                self.id = arg
+            elif par == 1:
+                self.width = arg
+            elif par == 2:
+                self.height = arg
+            elif par == 3:
+                self.x = arg
+            elif par == 4:
+                self.y = arg
