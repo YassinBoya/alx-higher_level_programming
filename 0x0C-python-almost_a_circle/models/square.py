@@ -50,17 +50,13 @@ class Square(Rectangle):
                     self.height = arg
                 elif par == 3:
                     self.x = arg
-                elif par == 4:
-                    self.y = arg
 
         elif kwargs and len(kwargs) != 0:
             for k, v in kwargs.items():
                 if k == "id":
                     self.id = v
-                elif k == "width":
-                    self.width = v
-                elif k == "height":
-                    self.height = v
+                elif k == "size":
+                    self.size = v
                 elif k == "x":
                     self.x = v
                 elif k == "y":
