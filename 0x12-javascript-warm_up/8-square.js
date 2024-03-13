@@ -3,7 +3,7 @@
 const { argv } = require('node:process');
 
 if (isNaN(parseInt(argv[2]))) {
-  console.log('Missing number of occurrences');
+  console.log('Missing size');
 }
 for (let i = 0; i < argv[2]; i++) {
   let line = '';
