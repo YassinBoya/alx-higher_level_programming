@@ -26,4 +26,3 @@ def find_peak(list_of_integers):
         return find_peak(list_of_integers[:half])
     else:
         return find_peak(list_of_integers[half + 1:])
-	
