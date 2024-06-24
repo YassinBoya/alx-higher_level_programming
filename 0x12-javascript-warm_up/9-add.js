@@ -1,5 +1,5 @@
 #!/usr/bin/node
-//prints the addition of 2 integers
+// prints the addition of 2 integers
 
 function sum (a, b) {
   console.log(parseInt(a) + parseInt(b));
