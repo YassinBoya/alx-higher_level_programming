@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// prints x times “C is fun”
 
 let i = 0;
 if (!parseInt(process.argv[2])) {
