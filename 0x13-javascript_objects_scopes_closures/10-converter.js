@@ -6,9 +6,8 @@
  * @returns {any} - the number converted to given base
  */
 exports.converter = function (base) {
-    function converted (number) {
-      return number.toString(base);
-    }
-    return converted;
-  };
-  
+  function converted (number) {
+    return number.toString(base);
+  }
+  return converted;
+};
