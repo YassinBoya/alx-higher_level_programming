@@ -5,12 +5,14 @@ and displays the body of the response (decoded in utf-8).
 """
 
 
-import sys
-import urllib.request
-
 if __name__ == "__main__":
+    import sys
+    from urllib import request, error
     url = sys.argv[1]
 
-    request = urllib.request.Request(url)
-    with urllib.request.urlopen(request) as res:
-        print(res.read().decode('utf-8'))
+    req = request.Request(url)
+    try:
+        with request.urlopen(req) as res:
+            print(res.read().decode('utf-8'))
+    except error.HTTPError as er:
+        print('Error code:', er.code)
